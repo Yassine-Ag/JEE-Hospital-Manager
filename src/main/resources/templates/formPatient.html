@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="template1" >
+
+<head>
+    <meta charset="UTF-8">
+    <title th:if="${mode == 'new'}">Add Patient</title>
+    <title th:if="${mode == 'edit'}">Edit Patient</title>
+</head>
+<body>
+
+   <div layout:fragment="pageContent">
+       <div class="container mt-5">
+
+           <div class="col-md-7 mx-auto card bg-light">
+
+               <span class="text-center mx-auto mt-4">
+               <h3 th:if="${mode=='new'}">Add Patient</h3>
+               <h3 th:if="${mode=='edit'}">Edit Patient</h3>
+               </span>
+               <hr>
+
+               <div class="card-body px-2">
+                   <form th:action="@{savePatient(mode=${mode})}" method="post" class="">
+                       <div class="form-group" >
+                           <input type="hidden" name="id"
+                            class="form-group" th:value="${patient.getId()}">
+                       </div>
+
+                       <div class="form-group px-3" >
+                           <label class="control-label ">Name:</label>
+                           <input type="text" name="name"
+                            class="form-control" th:value="${patient.getName()}" required="required"/>
+                           <span class="text-danger" ></span>
+                       </div>
+
+                       <div class="form-group px-3" >
+                           <label class="control-label">Birth Date:</label>
+                           <input type="date" name="birthDate"
+                                  class="form-control" th:value="${patient.getBirthDate()}" required="required">
+                           <span class="text-danger" ></span>
+                       </div>
+
+                       <div class="form-group px-3" >
+                           <label class="control-label">Sick?:</label>
+                           <input type="checkbox" name="sick"
+                                  style="width: 12px; height: 12px"
+                                  th:checked="${patient.isSick()}">
+                           <span class="text-danger"></span>
+                       </div>
+                        <hr>
+                       <div class="text-center">
+                           <button class="btn btn-success mb-4 mt-2 mx-auto"
+                            style="width: 150px" type="submit">Save</button>
+                       </div>
+                   </form>
+               </div>
+
+           </div>
+
+       </div>
+   </div>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="template1">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Profile</title>
+</head>
+<body>
+    <div layout:fragment="pageContent">
+        <div th:if="${mode=='new'}">
+            <script>
+                swal({
+                    title : " New patient added!",
+                    icon : "success",
+                });
+            </script>
+        </div>
+
+        <div th:if="${mode == 'edit'}">
+            <script>
+                swal({
+                    title : " Patient updated!",
+                    icon : "success",
+                });
+            </script>
+        </div>
+
+        <div class="container py-auto">
+
+            <div class="card mx-auto my-5 col-md-8 py-3">
+
+                <div class="card-body px-2 py-2 ">
+
+                    <span>
+                        <h3 class="text-center">Patient Portfolio</h3>
+                    </span>
+                    <hr>
+
+                    <div class="form-group row">
+                        <span class="col-md-4 d-inline border-right">
+                            <h6> Patient name: </h6>
+                        </span>
+                        <span class="ml-2 d-inline col-md-7">
+                            <h6 th:text="${patient.getName()}"></h6>
+                        </span>
+                    </div>
+
+                    <div class="form-group row">
+                        <span class="col-md-4 d-inline border-right">
+                             <h6 class=""> Birth date: </h6>
+                        </span>
+                        <span class="ml-2 d-inline col-md-7">
+                             <h6  th:text="${patient.getBirthDate()}"></h6>
+                        </span>
+                    </div>
+
+                    <div class="form-group row">
+                        <span class="col-md-4 d-inline border-right">
+                            <h6>Diagnosis:</h6>
+                        </span>
+
+                        <span class="ml-2 d-inline col-md-7">
+                            <h6 class="text-danger"  th:if="${patient.isSick()== true} "  th:text="'The patient is sick!'"/>
+                            <h6 class="text-success" th:if="${patient.isSick()== false} "  th:text="'The patient is healthy!'"/>
+                        </span>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>

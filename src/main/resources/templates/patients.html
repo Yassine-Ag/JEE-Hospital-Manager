@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org http://www.thymeleaf.org
+      http://www.ultraq.net.nz/thymeleaf/layout http://www.ultraq.net.nz/thymeleaf/layout
+      http://www.thymeleaf.org/thymeleaf-extras-springsecurity4 http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      layout:decorator="template1">
+
+<head>
+    <meta charset="UTF-8">
+    <title>List of Patients</title>
+</head>
+<body>
+<div layout:fragment="pageContent">
+
+    <div class="container mt-5">
+
+        <div class="card mx-auto col-md-11 col-sm-12 mb-3">
+
+            <div class="card-body">
+                <span class="text-center mx-auto">
+                    <h3>Patients list</h3>
+                </span>
+                <hr>
+
+                <div class="">
+                    <form class="form-inline" method="get" th:action="@{patients}">
+                        <div class="form-group">
+
+                            <div class="form-group mb-2 mt-2">
+                                <input type="text" class="form-control"
+                                       placeholder="Search by name.."
+                                       name="keyword" th:value="${keyword}"/>
+                                <button class="btn btn-primary ml-2">Search</button>
+
+                            </div>
+
+
+                        </div>
+
+                    </form>
+
+                    <hr/>
+
+                    <table class="table table-striped my-3">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th class="col-auto">Patient ID</th>
+                            <th class="col-auto">Name</th>
+                            <th class="col-auto">Birth Date</th>
+                            <th class="col-auto">Diagnosis</th>
+                        </tr>
+                        <tr th:each="p:${patients}">
+                            <td th:text="${p.getName()}"/>
+                            <td th:text="${p.getName()}"/>
+                            <td th:text="${p.getBirthDate()}"/>
+                            <td class="text-danger"  th:if="${p.isSick()== true} "  th:text="'The patient is sick!'"/>
+                            <td class="text-success" th:if="${p.isSick()== false} "  th:text="'The patient is healthy!'"/>
+                            <td sec:authorize="hasRole('ADMIN')">
+                               <span style="color: white">
+                                  <a class="btn btn-danger btn-circle fas fa-trash-alt"
+                                     onclick="return confirm('Do you want to delete this patient?')"
+                                     th:href="@{deletePatient(id=${p.getId()},keyword=${keyword},
+                                               page=${currentPage}, size=${size})}"
+                                     data-toggle="tooltip" data-placement="right"
+                                     title="Remove patient"></a>
+                               </span>
+                            </td >
+                            <td sec:authorize="hasRole('ADMIN')">
+                               <span style="color: white">
+                                  <a class="btn btn-primary btn-circle far fa-edit"
+                                     data-toggle="tooltip" data-placement="right"
+                                     title="Edit patient"
+                                     th:href="@{editPatient(id=${p.getId()},
+                                                keyword=${keyword}, page=${currentPage},
+                                                size=${size})}"></a>
+                               </span>
+                            </td>
+
+                        </tr>
+                        </thead>
+                    </table>
+                    <ul class="nav nav-pills">
+                        <li th:each="page,status:${pages}">
+                            <a th:class="${status.index == currentPage}? 'btn btn-dark' : 'btn' "
+                               th:href="@{patients(page=${status.index},
+                                keyword=${keyword}, size=${size})}"
+                               th:text="${status.index +1}">
+
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

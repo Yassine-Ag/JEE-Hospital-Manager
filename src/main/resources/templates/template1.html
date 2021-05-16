@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org http://www.thymeleaf.org
+      http://www.ultraq.net.nz/thymeleaf/layout http://www.ultraq.net.nz/thymeleaf/layout
+      http://www.thymeleaf.org/thymeleaf-extras-springsecurity4 http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hospitale-helper</title>
+
+    <link href="webjars/bootstrap/4.1.3/css/bootstrap.css" rel="stylesheet"
+          type="text/css"/>
+
+    <link rel="stylesheet"
+          href="webjars/font-awesome/5.15.2/css/all.min.css"/>
+
+    <script src="webjars/jquery/3.5.1/jquery.min.js"></script>
+    <script src="webjars/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="webjars/sweetalert/2.1.0/sweetalert.min.js"></script>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Hospital</a>
+
+    <!-- Links -->
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" th:href="@{patients}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Doctors</a></li>
+
+        <!-- Dropdown -->
+        <li class="nav-item dropdown"><a
+                class="nav-link dropdown-toggle" href="#" id="navbardrop"
+                data-toggle="dropdown">Patients</a>
+
+            <div class="dropdown-menu">
+                <a class="dropdown-item" sec:authorize="hasRole('ADMIN')"
+                   th:href="@{formPatient}">Add Patient</a>
+                <a class="dropdown-item" href="#">search Patient</a>
+            </div>
+        </li>
+    </ul>
+    <!-- Dropdown -->
+    <ul class="navbar-nav ml-auto ">
+
+
+        <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" href="#" id="navbar_drop_user"
+                data-toggle="dropdown">
+                <span sec:authentication="name"></span>
+            </a>
+
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">User Profile</a>
+
+                <a sec:authorize="!isAuthenticated()" class="dropdown-item" href="#">Login</a>
+                <a class="dropdown-item" th:href="@{logout}">Logout</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+<section layout:fragment="pageContent"
+         style="font-family: 'Segoe UI', sans-serif"></section>
+
+</body>
+</html>
