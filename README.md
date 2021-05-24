@@ -6,40 +6,38 @@
 ## User Guide:
 
 
-
 ###### Login:
 
 <kbd>![1](https://user-images.githubusercontent.com/18411357/119392819-211d9500-bcc8-11eb-98bb-543add2a873b.jpg)</kbd>
 
-
+<br/>
 
 
 ###### List of Patients:
 
 <kbd>![2](https://user-images.githubusercontent.com/18411357/119393013-5e822280-bcc8-11eb-8d0c-60f9f3a6c0fb.jpg)</kbd>
  
- 
- 
+ <br/>
  
 ###### Search for a patient:
 
 <kbd>![3](https://user-images.githubusercontent.com/18411357/119393127-75c11000-bcc8-11eb-8518-40b590dfb5ec.jpg)</kbd>
 
-
+<br/>
 
 
 ###### Deleting a patient:
 
 <kbd>![4](https://user-images.githubusercontent.com/18411357/119393173-82ddff00-bcc8-11eb-8557-a4029c3d2e97.jpg)</kbd>
 
-
+<br/>
 
 
 ###### Editing a patinet:
 
 <kbd>![5](https://user-images.githubusercontent.com/18411357/119393298-a86b0880-bcc8-11eb-9d11-26de631641ec.jpg)</kbd>
 
-
+<br/>
 
 
 ###### After editing a patient:
@@ -48,7 +46,7 @@
 
 <kbd>![7](https://user-images.githubusercontent.com/18411357/119393359-ba4cab80-bcc8-11eb-8f23-3ae2f466ebd2.jpg)</kbd>
 
-
+<br/>
 
 
 ###### Adding a patient:
