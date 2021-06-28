@@ -6,41 +6,41 @@
 ## User Guide:
 
 
-###### Login:
+##### Login:
 
 <kbd>![1](https://user-images.githubusercontent.com/18411357/119392819-211d9500-bcc8-11eb-98bb-543add2a873b.jpg)</kbd>
 
 <br/>
 
 
-###### List of Patients:
+##### List of Patients:
 
 <kbd>![2](https://user-images.githubusercontent.com/18411357/119393013-5e822280-bcc8-11eb-8d0c-60f9f3a6c0fb.jpg)</kbd>
  
  <br/>
  
-###### Search for a patient:
+##### Search for a patient:
 
 <kbd>![3](https://user-images.githubusercontent.com/18411357/119393127-75c11000-bcc8-11eb-8518-40b590dfb5ec.jpg)</kbd>
 
 <br/>
 
 
-###### Deleting a patient:
+##### Deleting a patient:
 
 <kbd>![4](https://user-images.githubusercontent.com/18411357/119393173-82ddff00-bcc8-11eb-8557-a4029c3d2e97.jpg)</kbd>
 
 <br/>
 
 
-###### Editing a patinet:
+##### Editing a patinet:
 
 <kbd>![5](https://user-images.githubusercontent.com/18411357/119393298-a86b0880-bcc8-11eb-9d11-26de631641ec.jpg)</kbd>
 
 <br/>
 
 
-###### After editing a patient:
+##### After editing a patient:
 
 <kbd>![6](https://user-images.githubusercontent.com/18411357/119393341-b456ca80-bcc8-11eb-8953-5691bd15e3a1.jpg)</kbd>
 
@@ -49,7 +49,7 @@
 <br/>
 
 
-###### Adding a patient:
+##### Adding a patient:
 
 <kbd>![8](https://user-images.githubusercontent.com/18411357/119393372-bfa9f600-bcc8-11eb-8acd-7d596f3b1bed.jpg)</kbd>
 
@@ -58,7 +58,7 @@
 
 
 
-###### After adding a patient:
+##### After adding a patient:
 
 <kbd>![10](https://user-images.githubusercontent.com/18411357/119393398-ca648b00-bcc8-11eb-8151-0cfa9c52aed9.jpg)</kbd>
 
@@ -69,7 +69,7 @@
 
 
 
-###### Log out:
+##### Log out:
 
 <kbd>![13](https://user-images.githubusercontent.com/18411357/119393455-dea88800-bcc8-11eb-9f61-6e989049f394.jpg)</kbd>
 
